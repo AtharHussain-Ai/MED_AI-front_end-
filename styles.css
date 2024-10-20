@@ -1,0 +1,319 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden; /* to prevent scroll bars */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Left Side */
+.left-side {
+    flex: 1;
+    background: url('./high-angle-woman-sitting-floor.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    position: relative;
+}
+
+.left-side::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%; /* Adjust this to control the gradient height */
+    background: linear-gradient(to top, rgb(150, 133, 133), transparent);
+    pointer-events: none;
+    z-index: 0; /* Ensures the overlay doesn't interfere with interactions */
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 100px;
+    letter-spacing: 2px;
+}
+
+.welcome-text {
+    margin-top: 12%;
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    max-width: 50%;
+    font-family: "Work Sans", sans-serif;
+}
+
+.steps {
+    display: flex;
+    gap: 25px;
+    font-size: 13px;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+.step {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Right Side */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keep content at the top */
+    padding: 40px;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    top: 40%;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+/* Form Section */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 60px;
+}
+
+.form-heading {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.form input {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none; /* Remove default border */
+    border-bottom: 1px solid #ffffff; /* Add only bottom border */
+    font-size: 14px;
+    width: 100%;
+    background: transparent; /* Remove background */
+}
+.form input::placeholder {
+    color: white; /* Change placeholder color to white */
+}
+
+
+.form input:focus {
+    outline: none; /* Remove outline on focus */
+    border-bottom: 1px solid #ff0055; /* Change bottom border color on focus */
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
+.button-container button {
+    flex: 1; /* Ensure buttons take equal space */
+    padding: 10px; /* Padding for buttons */
+}
+
+.submit-btn {
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 10px 20px; /* Updated padding for consistency */
+    border-radius: 100px; /* Rounded corners */
+    background: #ffffff; /* Button color */
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center; /* Center align text and SVG */
+    font-size: 15px; /* Slightly smaller font size */
+    margin-bottom: 20px; /* Space below the Continue button */
+}
+
+.submit-btn:hover {
+    background: #35f903; /* Hover background color */
+    color: rgb(0, 0, 0);
+}
+
+.submit-btn > svg {
+    width: 34px; /* Icon size */
+    margin-left: 10px; /* Space between text and icon */
+    transition: transform 0.2s ease; /* Add transition for rotation effect */
+}
+
+.submit-btn:hover > svg {
+    transform: translateX(5px); /* Move the icon to the right on hover */
+}
+
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between buttons */
+}
+
+.button-container button {
+    border: 1px solid white; /* 1px transparent border */
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* Text color */
+    padding: 10px 20px; /* Padding for buttons */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    border-radius: 22px; /* Rounded corners */
+
+}
+
+.button-container button:hover {
+    color: #000; /* Change border color on hover */
+    background-color: rgb(255, 255, 255); /* Optional: add a subtle background on hover */
+}
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+
+
+
+.left-side::after {
+    background: linear-gradient(to top, rgb(150, 133, 133), transparent);
+    z-index: 0; /* Ensures the overlay doesn't interfere with interactions */
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 100px;
+    letter-spacing: 2px;
+}
+
+.welcome-text {
+    font-size: 20px;
+    max-width: 60%;
+}
+
+.steps {
+    display: none;
+}
+
+/* Right Side */
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Keep content at the top */
+    padding: 40px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    top: 40%;
+}
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.form-heading {
+    font-size: 28px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 100;
+}
+
+.form input {
+    font-size: 10px;
+    width: 100%;
+    background: transparent; /* Remove background */
+}
+
+
+.button-container button {
+    flex: 1; /* Ensure buttons take equal space */
+    padding: 10px; /* Padding for buttons */
+}
+
+.submit-btn {
+    cursor: pointer;
+    font-weight: 100;
+    transition: all 0.2s;
+    padding: 5px 10px; /* Updated padding for consistency */
+    border-radius: 100px; /* Rounded corners */
+    background: #ffffff; /* Button color */
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center; /* Center align text and SVG */
+    font-size: 12px; /* Slightly smaller font size */
+    margin-bottom: 20px; /* Space below the Continue button */
+}
+
+
+.submit-btn > svg {
+    width: 30px; /* Icon size */
+}
+
+.submit-btn:hover > svg {
+    transform: translateX(5px); /* Move the icon to the right on hover */
+}
+
+
+.button-container button {
+    border: 1px solid white; /* 1px transparent border */
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* Text color */
+    padding: 5px 10px; /* Padding for buttons */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    border-radius: 22px; /* Rounded corners */
+
+}
+
+
+
+
+}
